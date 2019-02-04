@@ -1,0 +1,11 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <container name="block.logs.history" htmlTag="div" htmlClass="block block-logs-history" after="customer_account_dashboard_info">
+                <container name="logs.history" as="logs_history" label="Logs History">
+                    <block class="LogsHistory\Customer\Block\HistoryLogs" name="customer_account_last_log" template="LogsHistory_Customer::lastLog.phtml"/>
+                </container>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

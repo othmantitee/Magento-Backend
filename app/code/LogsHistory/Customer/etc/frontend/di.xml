@@ -1,0 +1,8 @@
+<config>
+    <type name="Magento\Customer\Controller\Account\CreatePost">
+        <plugin name="logshistory_customer_createpostplguin" type="\LogsHistory\Customer\Plugin\CreatePost" sortOrder="1"/>
+    </type>
+    <type name="\Magento\Customer\Controller\Account\LoginPost">
+        <plugin name="logshistory_customer_loginpostplugin" type="\LogsHistory\Customer\Plugin\LoginPostPlugin" sortOrder="1" />
+    </type>
+</config>

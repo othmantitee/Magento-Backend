@@ -1,0 +1,48 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: othman
+ * Date: 1/29/19
+ * Time: 10:25 AM
+ */
+$lastLog = $block->getLastLog();
+?>
+
+<div class="block-title">
+    <strong><?php echo __("Last Login") ?> </strong>
+</div>
+
+<div class="block-content">
+    <div class="box box-logs-history">
+        <strong class="box-title">
+            <span><?php echo __("Date & time") ?></span>
+        </strong>
+        <div class="box-conent">
+            <p>
+               <?php echo $lastLog['entry_date']; ?>
+            </p>
+        </div>
+    </div>
+
+    <div class="box box-logs-history">
+        <strong class="box-title">
+            <span><?php echo __("Location") ?></span>
+        </strong>
+        <div class="box-conent">
+            <p>
+                <?php echo $lastLog['ip_address'];?>
+            </p>
+        </div>
+    </div>
+
+    <div class="box box-logs-history">
+        <strong class="box-user_agenttitle">
+            <span><?php echo __("User agent") ?></span>
+        </strong>
+        <div class="box-conent">
+            <p>
+                <?php echo $lastLog['user_agent'];?>
+            </p>
+        </div>
+    </div>
+</div>
