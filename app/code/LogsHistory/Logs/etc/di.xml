@@ -1,0 +1,16 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="customers_logs_list_data_source" xsi:type="string">LogsHistory\Logs\Model\ResourceModel\LogEntry\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="LogsHistory\Logs\Model\ResourceModel\LogEntry\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">logshistory_log_entries</argument>
+            <argument name="resourceModel" xsi:type="string">LogsHistory\Logs\Model\ResourceModel\LogEntry</argument>
+        </arguments>
+    </virtualType>
+</config>
+

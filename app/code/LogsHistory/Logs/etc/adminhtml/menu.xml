@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="LogsHistory_Logs::manager" title="Logs History" module="LogsHistory_Logs"
+             resource="LogsHistory_Logs::manager" sortOrder="51"/>
+        <add id="LogsHistory_Logs::customer" title="Customers Logs" module="LogsHistory_Logs"
+             resource="LogsHistory_Logs::customer" sortOrder="10"  parent="LogsHistory_Logs::manager"
+             action="logs/customer"/>
+    </menu>
+</config>
