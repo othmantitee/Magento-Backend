@@ -1,0 +1,41 @@
+<?php 
+/**
+ * 
+ * 
+ */
+
+    /** @var \Magento\Framework\View\Element\Template $block */
+
+    /**
+     * Itg brands collection
+     * @var  ItgSoftware\Brands\Model\ResourceModel\Brand\Collection
+     */
+    $brands = $block->getBrands();
+    $imageDir =$this->helper('\Magento\Cms\Helper\Wysiwyg\Images')->getBaseUrl()."custom_image";
+?>
+
+<h1><?php echo $block->getTitle() ?> </h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"> <?= __("Brand Name") ?> </th>
+            <th scope="col"> <?= __("Brand Image") ?> </th>
+            <th scope="col"> <?= __("Website") ?> </th>
+            <th scope="col"> <?= __("Description") ?>
+            <th scope="col"> <?= __("Email") ?> </th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach ( $brands as $brandItem) {
+         if (!empty($brandItem)){
+            echo "<tr>
+            <td>". $brandItem->getBrandName() ."</td>
+            <td><img src=". $imageDir.$brandItem->getBrandImgUrl() ." alt=”Demo” width='30px' height='30px'></td>
+            <td><a href=". $brandItem->getBrandSiteUrl() .">Click here to visit </a></td>
+            <td>". $brandItem->getDescription() ."</td>
+            <td>". $brandItem->getEmail() ."</td>
+            </tr>" ;
+        }
+    }?>
+    </tbody>
+</table>

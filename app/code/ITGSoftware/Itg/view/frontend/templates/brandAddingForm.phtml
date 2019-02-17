@@ -1,0 +1,61 @@
+<?php
+/**
+ *
+ */
+    $inputs= $block->getFieldsValue();
+?>
+<h2><?php echo __("Add New Brand") ?></h2>
+
+<form class="form" action="#" method="post" enctype='multipart/form-data' data-mage-init='{"validation":{}}' data-hasrequired="* Required Fields">
+    <fieldset class="fieldset">
+        <div class="field name required">
+            <label class="label" for="brandname"><span> <?php echo __("Brand Name") ?></span></label>
+            <div class="control">
+                <input name="brandname" id="brandname" title="Brand name"
+                       value="<?php echo $inputs['brandname'] ?? '' ?>" class="input-text" type="text"
+                       data-validate='{"required":true}' />
+            </div>
+        </div>
+        <div class="field text required">
+            <label class="label" for="brandemail"><span> <?php echo __("Brand Email") ?></span></label>
+            <div class="control">
+                <input name="brandemail" id="brandemail" title="Brand email"
+                       value="<?php echo $inputs['brandemail']?? '' ?>" class="input-text" type="email"
+                       data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field text required">
+            <label class="label" for="siteurl"><span> <?php echo __("Official Website") ?></span></label>
+            <div class="control">
+                <input name="siteurl" id="siteurl" title="Brand Website"
+                       value="<?php echo $inputs['siteurl'] ?? ''?>" class="input-text" type="url"
+                       data-validate='{"required":true}'/>
+            </div>
+        </div>
+        <div class="field text required">
+            <label class="label" for="decription"><span> <?php echo __("Brand Description") ?></span></label>
+            <div class="control">
+                <textarea name="decription" id="decription" title="Brand website"
+                          value="" class="input-text" type="text"
+                          data-validate='{"required":true ,"min-words":3}'>
+                    <?php echo $inputs['decription'] ?? ''?>
+                </textarea>
+            </div>
+        </div>
+        <div class="field image required">
+            <label class="label" for="image"><span><?php /* @escapeNotVerified */ echo __('Image') ?></span></label>
+            <div class="control">
+                <input name="image" id="image" data-validate="{required:true}" title="<?php /* @escapeNotVerified */ echo __('image') ?>"   type="file" />
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="Submit" class="action submit primary">
+                <span> <?php echo __("Add Brand") ?></span>
+            </button>
+        </div>
+    </div>
+
+</form>

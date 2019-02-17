@@ -25,7 +25,7 @@ class LogEntry extends AbstractModel implements IdentityInterface
      */
     protected $_cacheTag = "logshistory_logs_logentry";
 
-    /**
+    /**}
      * @var string
      */
     protected $_eventPrefix = "logshistory_logs_logentry";

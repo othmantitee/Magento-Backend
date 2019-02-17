@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+  <acl>
+      <resources>
+          <resource id="CMagento_Author::admin" title="admin">
+              <resource id="CMagento_Author::content" title="content">
+                  <resource id="CMagento_Author::manager" title="Authors" sortOrder="10">
+                      <resource id="CMagento_Author::author" title="All Authors" sortOrder="40">
+                          <resource id="CMagento_Author::save"  title="Save author" sortOrder="10"/>
+                          <resource id="CMagento_Author::delete" title="Delete author" sortOrder="20"/>
+                      </resource>
+                  </resource>
+              </resource>
+          </resource>
+      </resources>
+  </acl>  
+</config>

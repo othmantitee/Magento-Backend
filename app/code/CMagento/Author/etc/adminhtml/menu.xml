@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="CMagento_Author::manager" title="Authors" module="CMagento_Author"
+             resource="CMagento_Author::manager" sortOrder="51"/>
+        <add id="CMagento_Author::authors_list" title="All Authors" module="CMagento_Author"
+             resource="CMagento_Author::author" sortOrder="10"  parent="CMagento_Author::manager"
+             action="author/index"/>
+    </menu>
+</config>
