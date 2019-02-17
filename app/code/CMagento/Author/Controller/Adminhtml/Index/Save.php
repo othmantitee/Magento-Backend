@@ -9,6 +9,7 @@
 namespace CMagento\Author\Controller\Adminhtml\Index;
 
 use CMagento\Author\Controller\Adminhtml\Index\Author as AuthorController;
+use CMagento\Author\Model\ImageUploaderPool;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Registry;
@@ -47,6 +48,8 @@ class Save extends AuthorController
      */
     protected $_dateTime;
 
+    protected $imageUploaderPool;
+
     /**
      * Save constructor.
      * @param Context $context
@@ -55,6 +58,7 @@ class Save extends AuthorController
      * @param \CMagento\Author\Model\ResourceModel\AuthorFactory $authorResourceFactory
      * @param TypeListInterface $cacheTypeList
      * @param FrontendPool $cacheFrontendPool
+     * @param ImageUploaderPool $imageUploaderPool
      * @param DateTime $dateTime
      */
     public function __construct(
@@ -64,11 +68,13 @@ class Save extends AuthorController
         \CMagento\Author\Model\ResourceModel\AuthorFactory $authorResourceFactory,
         TypeListInterface $cacheTypeList,
         FrontendPool $cacheFrontendPool,
+        ImageUploaderPool $imageUploaderPool,
         DateTime $dateTime)
     {
         $this->_authorFactory = $authorFactory;
         $this->_authorResourceFactory =$authorResourceFactory;
         $this->_cacheFrontendPool = $cacheFrontendPool;
+        $this->imageUploaderPool =$imageUploaderPool;
         $this->_cacheTypeList = $cacheTypeList;
         $this->_dateTime = $dateTime;
         parent::__construct($context, $coreRegistry);
@@ -80,7 +86,7 @@ class Save extends AuthorController
      * Note: Request will be added as operation argument in future
      *
      * @return \Magento\Framework\Controller\ResultInterface|ResponseInterface
-     * @throws \Magento\Framework\Exception\NotFoundException
+     * @throws \Exception
      */
     public function execute()
     {
@@ -99,14 +105,19 @@ class Save extends AuthorController
                 $modelResource->load($model,$data['email'],'email');
                 if($model->getAuthorId()){
                     $this->messageManager->addErrorMessage('An author with same email is already exists.');
-                    return $resultRedirect->setPath('*/*/edit');
+//                    return $resultRedirect->setPath('*/*/edit');
+                    return $this->_forward('edit',null,null,['previousData'=>$data]);
                 }
             }
+            $uploader = $this->imageUploaderPool->getUploader('image');
+            $image = $uploader->uploadFileAndGetName('image',$data);
+
             $authorData = array(
                 'first_name' => $data['first_name'],
                 'last_name' => $data['last_name'],
                 'phone' => $data['phone'],
-                'email' => $data['email']
+                'email' => $data['email'],
+                'image' => $image
             );
             $model->addData($authorData);
 

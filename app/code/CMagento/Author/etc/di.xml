@@ -12,5 +12,19 @@
             <argument name="resourceModel" xsi:type="string">CMagento\Author\Model\ResourceModel\Author</argument>
         </arguments>
     </virtualType>
+
+    <type name="CMagento\Author\Model\ImageUploader">
+        <arguments>
+            <!-- Temporary file stored in pub/media/author/tmp/icon -->
+            <argument name="baseTmpPath" xsi:type="string">author/tmp/icon</argument>
+            <argument name="basePath" xsi:type="string">author/tmp</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
 

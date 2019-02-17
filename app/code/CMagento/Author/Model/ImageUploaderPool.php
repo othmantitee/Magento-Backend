@@ -6,10 +6,9 @@
  * Time: 11:10 AM
  */
 
-namespace CMagento\Author\Model\ResourceModel;
+namespace CMagento\Author\Model;
 
 
-use CMagento\Author\Model\ImageUploader;
 use Magento\Framework\ObjectManagerInterface;
 
 class ImageUploaderPool
@@ -36,24 +35,26 @@ class ImageUploaderPool
     {
         $this->objectManager = $objectManager;
         $this->uploaders = $uploaders;
+        $this->uploaders['image'] = 'null';
     }
 
     /**
+     * @param $type
      * @return array
+     * @throws \Exception
      */
     public function getUploader($type)
     {
-        if(!isset($this->uploaders[$type])){
-            throw new \Exception("Uploader not found for type: ".$type);
-        }
+//        if(!isset($this->uploaders[$type])){
+//            throw new \Exception("Uploader not found for type: ".$type);
+//        }
         if(!is_object($this->uploaders[$type])){
-            $this->uploaders[$type] = $this->objectManager->create($this->uploaders[$type]);
+            $this->uploaders[$type] = $this->objectManager->create('CMagento\Author\Model\ImageUploader');
         }
         $uploader = $this->uploaders[$type];
         if(!($uploader instanceof ImageUploader)){
-            
+            throw new \Exception("Uploader for type {$type} not instance of ". ImageUploader::class);
         }
-
-        return $this->uploaders;
+        return $uploader;
     }
 }

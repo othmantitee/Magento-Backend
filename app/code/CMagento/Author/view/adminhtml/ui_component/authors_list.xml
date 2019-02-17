@@ -93,6 +93,19 @@
             </argument>
         </selectionsColumn>
 
+        <column name="image" class="CMagento\Author\Ui\Component\Listing\Columns\AuthorImage">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/thumbnail</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="altField" xsi:type="string">title</item>
+                    <item name="has_preview" xsi:type="string">1</item>
+                    <item name="label" xsi:type="string" translate="true">Image</item>
+                    <item name="sortOrder" xsi:type="number">3</item>
+                </item>
+            </argument>
+        </column>
+
         <column name="first_name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -104,9 +117,11 @@
                         </item>
                     </item>
                     <item name="label" xsi:type="string" translate="true">First Name</item>
+                    <item name="sortOrder" xsi:type="number">4</item>
                 </item>
             </argument>
         </column>
+
         <column name="last_name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -118,9 +133,11 @@
                         </item>
                     </item>
                     <item name="label" xsi:type="string" translate="true">Last Name</item>
+                    <item name="sortOrder" xsi:type="number">5</item>
                 </item>
             </argument>
         </column>
+
         <column name="email">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -132,9 +149,11 @@
                         </item>
                     </item>
                     <item name="label" xsi:type="string" translate="true">Email</item>
+                    <item name="sortOrder" xsi:type="number">7</item>
                 </item>
             </argument>
         </column>
+
         <column name="phone">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -146,13 +165,16 @@
                         </item>
                     </item>
                     <item name="label" xsi:type="string" translate="true">Phone NO.</item>
+                    <item name="sortOrder" xsi:type="number">6</item>
                 </item>
             </argument>
         </column>
+
         <actionsColumn name="actions" class="CMagento\Author\Ui\Component\Listing\Columns\AuthorActions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="indexField" xsi:type="string">author_id</item>
+                    <item name="sortOrder" xsi:type="number">8</item>
                 </item>
             </argument>
         </actionsColumn>

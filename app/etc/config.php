@@ -7,6 +7,8 @@ return [
         'CMagento_Author' => 1,
         'Magento_Theme' => 1,
         'Ho_Templatehints' => 1,
+        'ItgSoftware_Brands' => 1,
+        'ItgSoftware_Itg' => 1,
         'Magento_Cms' => 1,
         'Magento_Customer' => 1,
         'Magento_AdminNotification' => 1,

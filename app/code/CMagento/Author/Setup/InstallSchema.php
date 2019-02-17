@@ -51,31 +51,30 @@ class InstallSchema  implements InstallSchemaInterface
                     'first_name',
                     \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                     40,
-                    ['nullable => false'],
+                    ['nullable' => false],
                     'First Name'
                 )
                 ->addColumn(
                     'last_name',
                     \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                     40,
-                    ['nullable => false'],
+                    ['nullable' => false],
                     'Last Name'
                 )
                 ->addColumn(
                     'email',
                     \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                     50,
-                    ['nullable => false'],
+                    ['nullable' => false],
                     'Author Email'
                 )
                 ->addColumn(
                     'phone',
                     \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                     40,
-                    ['nullable => false'],
+                    ['nullable' => false],
                     'Author Phone'
-                )
-                ->setComment('Author Table');
+                )->setComment('Author Table');
             $setup->getConnection()->createTable($table);
 
         }

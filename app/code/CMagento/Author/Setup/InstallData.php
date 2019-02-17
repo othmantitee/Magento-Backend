@@ -33,6 +33,10 @@ class InstallData implements InstallDataInterface
     {
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
 
+        $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
+//        $eavSetup->removeAttribute(
+//            \Magento\Catalog\Model\Product::ENTITY,
+//            'author');
 
 
         $eavSetup->addAttribute(
@@ -43,9 +47,9 @@ class InstallData implements InstallDataInterface
                 'source' => 'CMagento\Author\Model\Attribute\Source\Author',
                 'frontend' => 'CMagento\Author\Model\Attribute\Frontend\Author',
                 'backend' => '',
-                'label' => 'Author',
+                'label' => 'Product Authors',
                 'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
-                'input' => 'select',
+                'input' => 'multiselect',
                 'class' => '',
                 'visible' => true,
                 'required' => false,
@@ -54,11 +58,11 @@ class InstallData implements InstallDataInterface
                 'searchable' => false,
                 'filterable' => false,
                 'comparable' => false,
-                'visible_on_front' => false,
+                'visible_on_front' => true,
                 'used_in_product_listing' => true,
                 'sort_order' => 50,
-                'is_used_in_grid' => false,
-                'is_visible_in_grid' => false,
+                'is_used_in_grid' => true,
+                'is_visible_in_grid' => true,
                 'is_filterable_in_grid' => false,
                 'is_html_allowed_on_front' => true,
                 'unique' => false,
