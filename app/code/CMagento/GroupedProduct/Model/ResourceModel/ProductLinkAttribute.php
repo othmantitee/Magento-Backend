@@ -2,20 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: othman
- * Date: 2/6/19
- * Time: 2:26 PM
+ * Date: 2/18/19
+ * Time: 9:15 AM
  */
 
-namespace CMagento\Author\Model\ResourceModel;
+namespace CMagento\GroupedProduct\Model\ResourceModel;
 
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
-/**
- * Class Author
- * @package CMagento\Author\ModelResourceModel
- */
-class Author extends AbstractDb
+class ProductLinkAttribute extends AbstractDb
 {
     /**
      * Author constructor.
@@ -34,6 +30,6 @@ class Author extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('cmagento_author','author_id');
+        $this->_init('catalog_product_link_attribute_varchar','value_id');
     }
 }
