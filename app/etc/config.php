@@ -5,6 +5,7 @@ return [
         'Magento_Directory' => 1,
         'Magento_Eav' => 1,
         'CMagento_Author' => 1,
+        'CMagento_GroupedProduct' => 1,
         'Magento_Theme' => 1,
         'Ho_Templatehints' => 1,
         'ItgSoftware_Brands' => 1,

@@ -13,10 +13,26 @@ use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 
 class Author extends AbstractSource
 {
-
+    /**
+     * @var \CMagento\Author\Model\ResourceModel\Author\CollectionFactory
+     */
     private $_authorCollectionFactory;
+
+    /**
+     * @var \CMagento\Author\Model\ResourceModel\AuthorFactory
+     */
     private $_authorResourceFactory;
+    /**
+     * @var \CMagento\Author\Model\AuthorFactory
+     */
     private $_authorFactory;
+
+    /**
+     * Author constructor.
+     * @param \CMagento\Author\Model\ResourceModel\Author\CollectionFactory $authorCollectionFactory
+     * @param \CMagento\Author\Model\ResourceModel\AuthorFactory $authorResourceFactory
+     * @param \CMagento\Author\Model\AuthorFactory $authorFactory
+     */
     public function __construct(
         \CMagento\Author\Model\ResourceModel\Author\CollectionFactory $authorCollectionFactory,
         \CMagento\Author\Model\ResourceModel\AuthorFactory $authorResourceFactory,

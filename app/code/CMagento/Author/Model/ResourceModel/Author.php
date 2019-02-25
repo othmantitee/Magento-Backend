@@ -19,7 +19,7 @@ class Author extends AbstractDb
 {
     /**
      * Author constructor.
-     * @param Context $context
+     * @param \Magento\Framework\Model\ResourceModel\Db\Context $context
      * @param string|null $connectionName
      */
     public function __construct(\Magento\Framework\Model\ResourceModel\Db\Context $context, ?string $connectionName = null)

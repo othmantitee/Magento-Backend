@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.grouped" remove="true"/>
+        <referenceBlock name="product.info.form.content">
+            <block class="Magento\GroupedProduct\Block\Product\View\Type\Grouped"
+                   name="product.info.custom.grouped"
+                   before="product.info.addtocart"
+                   template="CMagento_GroupedProduct::product/view/type/grouped.phtml"/>
+        </referenceBlock>
+    </body>
+</page>
