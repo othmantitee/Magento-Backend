@@ -99,7 +99,7 @@ class Subscription extends \Magento\Backend\Block\Widget\Form\Generic implements
         }
         /**@var \Magento\Framework\Data\Form $form */
         $form = $this->_formFactory->create();
-        $form->setHtmlIdPrefix('_newsletter');
+        $form->setHtmlIdPrefix('_subscription');
 
         $form->addFieldset('base_fieldset', ['legend' => __('Subscriptions Information')]);
 
